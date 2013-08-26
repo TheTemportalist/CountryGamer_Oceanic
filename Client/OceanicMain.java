@@ -4,6 +4,7 @@ import java.lang.reflect.Field;
 import java.util.Map;
 
 import mods.CountryGamer_Oceanic.Blocks.BlockAerateOre;
+import mods.CountryGamer_Oceanic.Blocks.BlockBase;
 import mods.CountryGamer_Oceanic.Items.ItemBase;
 import mods.CountryGamer_Oceanic.Items.ItemOceanicArmor;
 import mods.CountryGamer_Oceanic.Server.CraftingHandler;
@@ -51,21 +52,33 @@ public class OceanicMain {
 	/** Items */
 	public static Item	satLeather,		waterResLeather;
 	public static int	satLeatherID,	waterResLeatherID;
-	public static Item	wetsuitHead,	wetsuitBody,
-						wetsuitLegs,	wetsuitBoots;
-	public static int	wetsuitHeadID,	wetsuitBodyID,
-						wetsuitLegsID,	wetsuitBootsID;
+	public static Item	wetsuitHead,	wetsuitBody;
+	public static Item	wetsuitLegs,	wetsuitBoots;
+	public static int	wetsuitHeadID,	wetsuitBodyID;
+	public static int	wetsuitLegsID,	wetsuitBootsID;
 	public static Item	aeratePiece,	aerateIngot;
 	public static int	aeratePieceID,	aerateIngotID;
-	public static Item	divingSuitHead,	divingSuitBody,
-						divingSuitLegs,	divingSuitBoots;
-	public static int	divingSuitHeadID,	divingSuitBodyID,
-						divingSuitLegsID,	divingSuitBootsID;
+	public static Item	divingSuitHead,	divingSuitBody;
+	public static Item	divingSuitLegs,	divingSuitBoots;
+	public static int	divingSuitHeadID,	divingSuitBodyID;
+	public static int	divingSuitLegsID,	divingSuitBootsID;
+	public static Item	derrAerate;
+	public static int	derrAerateID;
+	public static Item	compAerate;
+	public static int	compAerateID;
+	public static Item	hardAerate;
+	public static int	hardAerateID;
+	public static Item	waterSuitHead,	waterSuitBody;
+	public static Item	waterSuitLegs,	waterSuitBoots;
+	public static int	waterSuitHeadID,	waterSuitBodyID;
+	public static int	waterSuitLegsID,	waterSuitBootsID;;
 	
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	/** Blocks */
 	public static Block	aerateOre;
 	public static int	aerateOreID;
+	public static Block	aerateBlock, aerateBlockHard;
+	public static int	aerateBlockID, aerateBlockHardID;
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	/** Armor */
 	
@@ -76,7 +89,8 @@ public class OceanicMain {
 	/** Other */
 	public static CreativeTabs oceanic;
 	public static EnumArmorMaterial wetsuitArmor	= EnumHelper.addArmorMaterial("wetsuit", 6, new int[]{1, 3, 2, 1}, 10);
-	public static EnumArmorMaterial divingSuitArmor	= EnumHelper.addArmorMaterial("divingSuit", 10, new int[]{3, 5, 4, 3}, 7);
+	public static EnumArmorMaterial divingSuitArmor	= EnumHelper.addArmorMaterial("divingSuit", 10, new int[]{5, 7, 6, 5}, 7);
+	public static EnumArmorMaterial waterSuitArmor	= EnumHelper.addArmorMaterial("waterSuit", 8, new int[]{3, 5, 4, 3}, 5);
 	public static OceanicGenerator oceanGen = new OceanicGenerator();
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	/** Achievements */
@@ -104,6 +118,9 @@ public class OceanicMain {
 		config.load();
 		
 		aerateOreID			= config.get(blockCate,	"Aerate Ore",				600).getInt();
+		aerateBlockID		= config.get(blockCate,	"Aerate Block",				601).getInt();
+		aerateBlockHardID	= config.get(blockCate,	"Hardened Aerate Block",	602).getInt();
+
 		
 		satLeatherID		= config.get(itemCate,	"Saturated Leather",		650).getInt();
 		waterResLeatherID	= config.get(itemCate,	"Water Resistant Leather",	651).getInt();
@@ -121,6 +138,12 @@ public class OceanicMain {
 		divingSuitLegsID	= config.get(itemCate,	"Diving Suit Armor: Legs",	660).getInt();
 		divingSuitBootsID	= config.get(itemCate,	"Diving Suit Armor: Boots",	661).getInt();
 		
+		derrAerateID		= config.get(itemCate,	"Derrived Aerate",			662).getInt();
+		
+		waterSuitHeadID		= config.get(itemCate,	"Water Suit Armor: Head",	663).getInt();
+		waterSuitBodyID		= config.get(itemCate,	"Water Suit Armor: Body",	664).getInt();
+		waterSuitLegsID		= config.get(itemCate,	"Water Suit Armor: Legs",	665).getInt();
+		waterSuitBootsID	= config.get(itemCate,	"Water Suit Armor: Boots",	666).getInt();
 		
 		
 		config.save();
@@ -176,15 +199,29 @@ public class OceanicMain {
 		divingSuitHead = new ItemOceanicArmor(divingSuitHeadID, divingSuitArmor, armorAdd, 0)
 				.setUnlocalizedName("divingSuitHead");
 		LanguageRegistry.addName(divingSuitHead, "Diving Suit Helmet");
-		divingSuitBody = new ItemOceanicArmor(divingSuitBodyID, divingSuitArmor, armorAdd, 0)
+		divingSuitBody = new ItemOceanicArmor(divingSuitBodyID, divingSuitArmor, armorAdd, 1)
 				.setUnlocalizedName("divingSuitBody");
 		LanguageRegistry.addName(divingSuitBody, "Diving Suit Chest");
-		divingSuitLegs = new ItemOceanicArmor(divingSuitLegsID, divingSuitArmor, armorAdd, 0)
+		divingSuitLegs = new ItemOceanicArmor(divingSuitLegsID, divingSuitArmor, armorAdd, 2)
 				.setUnlocalizedName("divingSuitLegs");
 		LanguageRegistry.addName(divingSuitLegs, "Diving Suit Leggings");
-		divingSuitBoots = new ItemOceanicArmor(divingSuitBootsID, divingSuitArmor, armorAdd, 0)
+		divingSuitBoots = new ItemOceanicArmor(divingSuitBootsID, divingSuitArmor, armorAdd, 3)
 				.setUnlocalizedName("divingSuitBoots");
 		LanguageRegistry.addName(divingSuitBoots, "Diving Suit Boots");
+		
+		armorAdd = proxy.addArmor("waterSuit");
+		waterSuitHead = new ItemOceanicArmor(waterSuitHeadID, waterSuitArmor, armorAdd, 0)
+				.setUnlocalizedName("waterSuitHead");
+		LanguageRegistry.addName(waterSuitHead, "Water Suit Helmet");
+		waterSuitBody = new ItemOceanicArmor(waterSuitBodyID, waterSuitArmor, armorAdd, 1)
+				.setUnlocalizedName("waterSuitBody");
+		LanguageRegistry.addName(waterSuitBody, "Water Suit Chest");
+		waterSuitLegs = new ItemOceanicArmor(waterSuitLegsID, waterSuitArmor, armorAdd, 2)
+				.setUnlocalizedName("waterSuitLegs");
+		LanguageRegistry.addName(waterSuitLegs, "Water Suit Leggings");
+		waterSuitBoots = new ItemOceanicArmor(waterSuitBootsID, waterSuitArmor, armorAdd, 3)
+				.setUnlocalizedName("waterSuitBoots");
+		LanguageRegistry.addName(waterSuitBoots, "Water Suit Boots");
 		
 	}
 	public static void items() {
@@ -196,12 +233,26 @@ public class OceanicMain {
 		LanguageRegistry.addName(aeratePiece, "Aerate Piece");
 		aerateIngot = new ItemBase(aerateIngotID).setUnlocalizedName("aerateIngot");
 		LanguageRegistry.addName(aerateIngot, "Aerate Ingot");
+		derrAerate = new ItemBase(derrAerateID).setUnlocalizedName("derrAerate");
+		LanguageRegistry.addName(derrAerate, "Derrived Aerate");
+		compAerate = new ItemBase(compAerateID).setUnlocalizedName("compAerate");
+		LanguageRegistry.addName(compAerate, "Compressed Aerate");
+		hardAerate = new ItemBase(hardAerateID).setUnlocalizedName("hardAerate");
+		LanguageRegistry.addName(hardAerate, "Hardened Aerate");
+		
 		
 	}
 	public static void blocks() {
 		aerateOre = new BlockAerateOre(aerateOreID, Material.rock).setUnlocalizedName("aerateOre");
 		LanguageRegistry.addName(aerateOre, "Aerate Ore");
 		GameRegistry.registerBlock(aerateOre, aerateOre.getUnlocalizedName());
+		
+		aerateBlock = new BlockBase(aerateBlockID, Material.rock).setUnlocalizedName("aerateBlock");
+		LanguageRegistry.addName(aerateBlock, "Aerate Block");
+		GameRegistry.registerBlock(aerateBlock, aerateBlock.getUnlocalizedName());
+		aerateBlockHard = new BlockAerateOre(aerateBlockHardID, Material.rock).setUnlocalizedName("aerateBlockHard");
+		LanguageRegistry.addName(aerateBlockHard, "Hardened Aerate Block");
+		GameRegistry.registerBlock(aerateBlockHard, aerateBlockHard.getUnlocalizedName());
 		
 	}
 	public static void craftSmelt() {
@@ -241,6 +292,38 @@ public class OceanicMain {
 		GameRegistry.addRecipe(new ItemStack(divingSuitBoots, 1), new Object[] {
 			"xcx", "x x", 'x', OceanicMain.aerateIngot, 'c', OceanicMain.wetsuitBoots
 		});
+		/** Water Suit */
+		GameRegistry.addRecipe(new ItemStack(waterSuitHead, 1), new Object[] {
+			"ccc", " x ", 'x', OceanicMain.divingSuitHead, 'c', Item.feather
+		});
+		GameRegistry.addRecipe(new ItemStack(waterSuitBody, 1), new Object[] {
+			"c c", "cxc", "ccc", 'x', OceanicMain.divingSuitBody, 'c', Item.feather
+		});
+		GameRegistry.addRecipe(new ItemStack(waterSuitLegs, 1), new Object[] {
+			"ccc", " x ", "c c", 'x', OceanicMain.divingSuitLegs, 'c', Item.feather
+		});
+		GameRegistry.addRecipe(new ItemStack(waterSuitBoots, 1), new Object[] {
+			"cxc", "c c", 'x', OceanicMain.divingSuitBoots, 'c', Item.feather
+		});
+		/** Aerate */
+		GameRegistry.addRecipe(new ItemStack(compAerate, 1), new Object[] {
+			"xxx", "xxx", "xxx", 'x', OceanicMain.aerateIngot
+		});
+		GameRegistry.addSmelting(compAerate.itemID, new ItemStack(hardAerate), 0.1f);
+		GameRegistry.addRecipe(new ItemStack(aerateBlockHard, 1), new Object[] {
+			"xxx", "xxx", "xxx", 'x', OceanicMain.hardAerate
+		});
+		GameRegistry.addShapelessRecipe(new ItemStack(hardAerate, 9), new Object[] {
+			OceanicMain.aerateBlockHard
+		});
+		GameRegistry.addRecipe(new ItemStack(aerateBlock, 1), new Object[] {
+			"xxx", "xxx", "xxx", 'x', OceanicMain.aerateIngot
+		});
+		GameRegistry.addSmelting(aerateBlock.blockID, new ItemStack(aerateBlockHard), 0.1f);
+		GameRegistry.addShapelessRecipe(new ItemStack(aerateIngot, 9), new Object[] {
+			OceanicMain.aerateBlock
+		});
+		
 		
 	}
 	
