@@ -71,8 +71,7 @@ public class OceanicMain {
 	public static Item	waterSuitHead,	waterSuitBody;
 	public static Item	waterSuitLegs,	waterSuitBoots;
 	public static int	waterSuitHeadID,	waterSuitBodyID;
-	public static int	waterSuitLegsID,	waterSuitBootsID;;
-	
+	public static int	waterSuitLegsID,	waterSuitBootsID;
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	/** Blocks */
 	public static Block	aerateOre;
