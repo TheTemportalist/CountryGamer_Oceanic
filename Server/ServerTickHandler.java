@@ -23,7 +23,7 @@ public class ServerTickHandler implements ITickHandler
 			//potion id, number of ticks, level + 1
 			//ticks can be at 20 because this is updated every tick
 			if( player.isInWater() ) {
-				player.setAir(300);
+				//player.setAir(300);
 				
 				int length = 120, strength = 5;//3
 				//player.addPotionEffect((new PotionEffect(Potion.nightVision.getId(), length, strength)));

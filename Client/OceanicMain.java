@@ -20,6 +20,7 @@ import net.minecraft.stats.AchievementMap;
 import net.minecraft.stats.StatList;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.EnumHelper;
+import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
@@ -139,10 +140,10 @@ public class OceanicMain {
 		
 		derrAerateID		= config.get(itemCate,	"Derrived Aerate",			662).getInt();
 		
-		waterSuitHeadID		= config.get(itemCate,	"Water Suit Armor: Head",	663).getInt();
-		waterSuitBodyID		= config.get(itemCate,	"Water Suit Armor: Body",	664).getInt();
-		waterSuitLegsID		= config.get(itemCate,	"Water Suit Armor: Legs",	665).getInt();
-		waterSuitBootsID	= config.get(itemCate,	"Water Suit Armor: Boots",	666).getInt();
+		//waterSuitHeadID		= config.get(itemCate,	"Water Suit Armor: Head",	663).getInt();
+		//waterSuitBodyID		= config.get(itemCate,	"Water Suit Armor: Body",	664).getInt();
+		//waterSuitLegsID		= config.get(itemCate,	"Water Suit Armor: Legs",	665).getInt();
+		//waterSuitBootsID	= config.get(itemCate,	"Water Suit Armor: Boots",	666).getInt();
 		
 		
 		config.save();
@@ -172,6 +173,7 @@ public class OceanicMain {
 		achievements();
 		
 		GameRegistry.registerWorldGenerator(oceanGen);
+		MinecraftForge.EVENT_BUS.register(new OceanicEventHandler());
 	}
 	@EventHandler
 	public static void postInit(FMLPostInitializationEvent event) {
@@ -207,7 +209,7 @@ public class OceanicMain {
 		divingSuitBoots = new ItemOceanicArmor(divingSuitBootsID, divingSuitArmor, armorAdd, 3)
 				.setUnlocalizedName("divingSuitBoots");
 		LanguageRegistry.addName(divingSuitBoots, "Diving Suit Boots");
-		
+		/*
 		armorAdd = proxy.addArmor("waterSuit");
 		waterSuitHead = new ItemOceanicArmor(waterSuitHeadID, waterSuitArmor, armorAdd, 0)
 				.setUnlocalizedName("waterSuitHead");
@@ -221,7 +223,7 @@ public class OceanicMain {
 		waterSuitBoots = new ItemOceanicArmor(waterSuitBootsID, waterSuitArmor, armorAdd, 3)
 				.setUnlocalizedName("waterSuitBoots");
 		LanguageRegistry.addName(waterSuitBoots, "Water Suit Boots");
-		
+		*/
 	}
 	public static void items() {
 		satLeather = new ItemBase(satLeatherID).setUnlocalizedName("satLeather");
@@ -291,7 +293,7 @@ public class OceanicMain {
 		GameRegistry.addRecipe(new ItemStack(divingSuitBoots, 1), new Object[] {
 			"xcx", "x x", 'x', OceanicMain.aerateIngot, 'c', OceanicMain.wetsuitBoots
 		});
-		/** Water Suit */
+		/** Water Suit *//*
 		GameRegistry.addRecipe(new ItemStack(waterSuitHead, 1), new Object[] {
 			"ccc", " x ", 'x', OceanicMain.divingSuitHead, 'c', Item.feather
 		});
@@ -303,7 +305,7 @@ public class OceanicMain {
 		});
 		GameRegistry.addRecipe(new ItemStack(waterSuitBoots, 1), new Object[] {
 			"cxc", "c c", 'x', OceanicMain.divingSuitBoots, 'c', Item.feather
-		});
+		});*/
 		/** Aerate */
 		GameRegistry.addRecipe(new ItemStack(compAerate, 1), new Object[] {
 			"xxx", "xxx", "xxx", 'x', OceanicMain.aerateIngot
