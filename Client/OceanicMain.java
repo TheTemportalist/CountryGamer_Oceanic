@@ -3,9 +3,9 @@ package mods.CountryGamer_Oceanic.Client;
 import java.lang.reflect.Field;
 import java.util.Map;
 
+import mods.CountryGamer_Core.BlockBase;
+import mods.CountryGamer_Core.ItemBase;
 import mods.CountryGamer_Oceanic.Blocks.BlockAerateOre;
-import mods.CountryGamer_Oceanic.Blocks.BlockBase;
-import mods.CountryGamer_Oceanic.Items.ItemBase;
 import mods.CountryGamer_Oceanic.Items.ItemOceanicArmor;
 import mods.CountryGamer_Oceanic.Server.CraftingHandler;
 import mods.CountryGamer_Oceanic.Server.ServerProxy;

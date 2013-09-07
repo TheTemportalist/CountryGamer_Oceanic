@@ -10,7 +10,7 @@ public class ItemOceanicArmor extends ItemArmor {
 			int render, int index) {
 		super(id, mat, render, index);
 		this.setCreativeTab(OceanicMain.oceanic);
-		this.func_111206_d(OceanicMain.base_Tex + this.getUnlocalizedName());
+		this.setTextureName(OceanicMain.base_Tex + this.getUnlocalizedName());
 	}
 
 }

@@ -67,8 +67,8 @@ public class EntityShark extends EntityWaterMob
     
     protected void func_110147_ax()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(10.0D);
+        //super.func_110147_ax();
+        //this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(10.0D);
     }
 
     /**
