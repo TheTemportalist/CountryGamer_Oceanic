@@ -1,6 +1,6 @@
-package mods.CountryGamer_Oceanic.Blocks;
+package CountryGamer_Oceanic.Blocks;
 
-import mods.CountryGamer_Core.BlockBase;
+import CountryGamer_Core.BlockBase;
 import net.minecraft.block.material.Material;
 
 public class BlockAerateOre extends BlockBase {

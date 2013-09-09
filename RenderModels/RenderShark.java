@@ -1,6 +1,6 @@
-package mods.CountryGamer_Oceanic.RenderModels;
+package CountryGamer_Oceanic.RenderModels;
 
-import mods.CountryGamer_Oceanic.Entities.EntityShark;
+import CountryGamer_Oceanic.Entities.EntityShark;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;

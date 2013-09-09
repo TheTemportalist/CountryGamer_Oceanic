@@ -1,6 +1,6 @@
-package mods.CountryGamer_Oceanic.Server;
+package CountryGamer_Oceanic.Server;
 
-import mods.CountryGamer_Oceanic.Client.OceanicMain;
+import CountryGamer_Oceanic.Client.OceanicMain;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;

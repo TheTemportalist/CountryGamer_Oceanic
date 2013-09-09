@@ -1,4 +1,4 @@
-package mods.CountryGamer_Oceanic.Client;
+package CountryGamer_Oceanic.Client;
 
 import java.util.Random;
 

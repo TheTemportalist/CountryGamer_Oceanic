@@ -1,6 +1,6 @@
-package mods.CountryGamer_Oceanic.Items;
+package CountryGamer_Oceanic.Items;
 
-import mods.CountryGamer_Oceanic.Client.OceanicMain;
+import CountryGamer_Oceanic.Client.OceanicMain;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.ItemArmor;
 

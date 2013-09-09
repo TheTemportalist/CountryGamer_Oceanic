@@ -1,8 +1,8 @@
-package mods.CountryGamer_Oceanic.Server;
+package CountryGamer_Oceanic.Server;
 
 import java.util.EnumSet;
 
-import mods.CountryGamer_Oceanic.Client.OceanicMain;
+import CountryGamer_Oceanic.Client.OceanicMain;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;

@@ -1,4 +1,4 @@
-package mods.CountryGamer_Oceanic.Server;
+package CountryGamer_Oceanic.Server;
 
 import cpw.mods.fml.common.registry.TickRegistry;
 import cpw.mods.fml.relauncher.Side;

@@ -1,8 +1,8 @@
-package mods.CountryGamer_Oceanic.Client;
+package CountryGamer_Oceanic.Client;
 
-import mods.CountryGamer_Oceanic.Entities.EntityShark;
-import mods.CountryGamer_Oceanic.RenderModels.RenderShark;
-import mods.CountryGamer_Oceanic.Server.ServerProxy;
+import CountryGamer_Oceanic.Entities.EntityShark;
+import CountryGamer_Oceanic.RenderModels.RenderShark;
+import CountryGamer_Oceanic.Server.ServerProxy;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 
 public class ClientProxy extends ServerProxy {

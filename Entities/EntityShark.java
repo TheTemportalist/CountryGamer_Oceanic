@@ -1,4 +1,4 @@
-package mods.CountryGamer_Oceanic.Entities;
+package CountryGamer_Oceanic.Entities;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.SharedMonsterAttributes;

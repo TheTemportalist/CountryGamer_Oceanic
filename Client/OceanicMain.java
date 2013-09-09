@@ -1,14 +1,14 @@
-package mods.CountryGamer_Oceanic.Client;
+package CountryGamer_Oceanic.Client;
 
 import java.lang.reflect.Field;
 import java.util.Map;
 
-import mods.CountryGamer_Core.BlockBase;
-import mods.CountryGamer_Core.ItemBase;
-import mods.CountryGamer_Oceanic.Blocks.BlockAerateOre;
-import mods.CountryGamer_Oceanic.Items.ItemOceanicArmor;
-import mods.CountryGamer_Oceanic.Server.CraftingHandler;
-import mods.CountryGamer_Oceanic.Server.ServerProxy;
+import CountryGamer_Core.BlockBase;
+import CountryGamer_Core.ItemBase;
+import CountryGamer_Oceanic.Blocks.BlockAerateOre;
+import CountryGamer_Oceanic.Items.ItemOceanicArmor;
+import CountryGamer_Oceanic.Server.CraftingHandler;
+import CountryGamer_Oceanic.Server.ServerProxy;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -43,8 +43,8 @@ public class OceanicMain {
 	
 	//@Instance
 	//public OceanicMain instance = new OceanicMain();
-	@SidedProxy(clientSide="mods.CountryGamer_Oceanic.Client.ClientProxy",
-				serverSide="mods.CountryGamer_Oceanic.Server.ServerProxy")
+	@SidedProxy(clientSide="CountryGamer_Oceanic.Client.ClientProxy",
+				serverSide="CountryGamer_Oceanic.Server.ServerProxy")
 	public static ServerProxy proxy;
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
