@@ -226,34 +226,34 @@ public class OceanicMain {
 		*/
 	}
 	public static void items() {
-		satLeather = new ItemBase(satLeatherID).setUnlocalizedName("satLeather");
+		satLeather = new ItemBase(satLeatherID, OceanicMain.modid, "satLeather");
 		LanguageRegistry.addName(satLeather, "Saturated Leather");
-		waterResLeather = new ItemBase(waterResLeatherID).setUnlocalizedName("waterResLeather");
+		waterResLeather = new ItemBase(waterResLeatherID, OceanicMain.modid, "waterResLeather");
 		LanguageRegistry.addName(waterResLeather, "Water Resistant Leather");
-		aeratePiece = new ItemBase(aeratePieceID).setUnlocalizedName("aeratePiece");
+		aeratePiece = new ItemBase(aeratePieceID, OceanicMain.modid, "aeratePiece");
 		LanguageRegistry.addName(aeratePiece, "Aerate Piece");
-		aerateIngot = new ItemBase(aerateIngotID).setUnlocalizedName("aerateIngot");
+		aerateIngot = new ItemBase(aerateIngotID, OceanicMain.modid, "aerateIngot");
 		LanguageRegistry.addName(aerateIngot, "Aerate Ingot");
-		derrAerate = new ItemBase(derrAerateID).setUnlocalizedName("derrAerate");
+		derrAerate = new ItemBase(derrAerateID, OceanicMain.modid, "derrAerate");
 		LanguageRegistry.addName(derrAerate, "Derrived Aerate");
-		compAerate = new ItemBase(compAerateID).setUnlocalizedName("compAerate");
+		compAerate = new ItemBase(compAerateID, OceanicMain.modid, "compAerate");
 		LanguageRegistry.addName(compAerate, "Compressed Aerate");
-		hardAerate = new ItemBase(hardAerateID).setUnlocalizedName("hardAerate");
+		hardAerate = new ItemBase(hardAerateID, OceanicMain.modid, "hardAerate");
 		LanguageRegistry.addName(hardAerate, "Hardened Aerate");
 		
 		
 	}
 	public static void blocks() {
-		aerateOre = new BlockAerateOre(aerateOreID, Material.rock).setUnlocalizedName("aerateOre");
+		aerateOre = new BlockAerateOre(aerateOreID, Material.rock, "aerateOre");
 		LanguageRegistry.addName(aerateOre, "Aerate Ore");
-		GameRegistry.registerBlock(aerateOre, aerateOre.getUnlocalizedName());
+		//GameRegistry.registerBlock(aerateOre, aerateOre.getUnlocalizedName());
 		
-		aerateBlock = new BlockBase(aerateBlockID, Material.rock).setUnlocalizedName("aerateBlock");
+		aerateBlock = new BlockBase(aerateBlockID, Material.rock, "aerateBlock");
 		LanguageRegistry.addName(aerateBlock, "Aerate Block");
-		GameRegistry.registerBlock(aerateBlock, aerateBlock.getUnlocalizedName());
-		aerateBlockHard = new BlockAerateOre(aerateBlockHardID, Material.rock).setUnlocalizedName("aerateBlockHard");
+		//GameRegistry.registerBlock(aerateBlock, aerateBlock.getUnlocalizedName());
+		aerateBlockHard = new BlockAerateOre(aerateBlockHardID, Material.rock, "aerateBlockHard");
 		LanguageRegistry.addName(aerateBlockHard, "Hardened Aerate Block");
-		GameRegistry.registerBlock(aerateBlockHard, aerateBlockHard.getUnlocalizedName());
+		//GameRegistry.registerBlock(aerateBlockHard, aerateBlockHard.getUnlocalizedName());
 		
 	}
 	public static void craftSmelt() {
